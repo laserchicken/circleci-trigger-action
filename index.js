@@ -12,8 +12,8 @@ async function run() {
     const jsonObj = JSON.parse(payload)
 
     var requestPayload = {
-      branch: branch,
-      parameters: jsonObj
+      parameters: jsonObj,
+      ...(branch && {branch}),
     };
 
     let headers = {
